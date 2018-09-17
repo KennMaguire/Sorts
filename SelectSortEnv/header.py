@@ -1,6 +1,7 @@
 #Header file for SelectionSort.py
 #Written by Kenneth Maguire
-
+import matplotlib
+import matplotlib.pyplot as plt
 
 class comparisonCounter:
     total = 0
@@ -9,6 +10,16 @@ class comparisonCounter:
     def add(self, x):
         self.total += x
 
+class plotCandE:
+    exchY = []
+    compY = []
+    countX = []
+    def __init__(self):
+        self.exchY = []
+        self.compY = []
+        self.countX = []
+
+
 def comparisonAndCount(_unsortedArray, _min, _i, _comp):
     _comp.add(1)
     if(_unsortedArray[_i] < _unsortedArray[_min]):
@@ -16,23 +27,31 @@ def comparisonAndCount(_unsortedArray, _min, _i, _comp):
     else:
         return False
 
-def plotCompAndExchange(_count, _exchange, _comparison):
+def plotCompAndExchange(_count, _exchange, _comparison, _plotArrays):
+    def appendValues():
+        _plotArrays.countX.append(_count)
+        _plotArrays.exchY.append(_exchange)
+        _plotArrays.compY.append(_comparison)
+    plt.xlabel('x axis')
+    plt.ylabel('y axis')
+    plt.title('Comparisons and Exchanges with increase in N')
+
     if _count == 1:
-        print(str(_count))
-        print(str(_comparison))
-        print(str(_exchange) + '\n')
+        appendValues()
     elif _count == 10:
-        print(str(_count))
-        print(str(_comparison))
-        print(str(_exchange) + '\n')
+        appendValues()
     elif _count == 100:
-        print(str(_count))
-        print(str(_comparison))
-        print(str(_exchange) + '\n')
+        appendValues()
     elif _count == 1000:
-        print(str(_count))
-        print(str(_comparison))
-        print(str(_exchange) + '\n')
+        appendValues()
+    elif _count == 10000:
+        appendValues()
+    elif _count == 100000:
+        appendValues()
+    elif _count == 1000000:
+        appendValues()
+
+
 
 
 def inputFile(_fileNum):
