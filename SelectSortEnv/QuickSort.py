@@ -18,8 +18,12 @@ def quickSort(unsortedList, _comp, p, r):
     #trying iterative since recursion causes recursion depth exceeded
     while p < r:
         q = partition(unsortedList, _comp, p, r)
-        quickSort(unsortedList, _comp, p, q-1)
-        p = q+1
+        if(q-p < r-q):
+            quickSort(unsortedList, _comp, p, q-1)
+            p = q+1
+        else:
+            quickSort(unsortedList, _comp, q+1, r)
+            r = r-1
 
 def partition(partList, _comp, p, r):
     pivot = partList[r]
@@ -38,7 +42,7 @@ def partition(partList, _comp, p, r):
 #driver section (like main())
 
 
-fileNum = 5 #select which data set to sort
+fileNum = 1 #select which data set to sort
 
 comp = header.comparisonCounter()
 
