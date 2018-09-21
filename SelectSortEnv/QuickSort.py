@@ -18,9 +18,9 @@ def quickSort(unsortedList, _comp, p, r):
     #trying iterative since recursion causes recursion depth exceeded
     while p < r:
         q = partition(unsortedList, _comp, p, r)
-        if(q-p < r-q):
-            quickSort(unsortedList, _comp, p, q-1)
-            p = q+1
+        if(q-p < r-q):                                      #was dealing with recursion issues and found help at https://www.geeksforgeeks.org/quicksort-tail-call-optimization-reducing-worst-case-space-log-n/
+            quickSort(unsortedList, _comp, p, q-1)          #originally used the tail recursive-quicksort from the textbook, but found that I still hit max recursion depth
+            p = q+1                                         #the if else method here works well because it only recursively calls whichever part (lower or higher) becomes smaller after partition
         else:
             quickSort(unsortedList, _comp, q+1, r)
             r = r-1
