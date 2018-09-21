@@ -18,7 +18,7 @@ def quickSort(unsortedList, _comp, p, r):
     #trying iterative since recursion causes recursion depth exceeded
     while p < r:
         q = partition(unsortedList, _comp, p, r)
-        if(q-p < r-q):                                      #was dealing with recursion issues and found help at https://www.geeksforgeeks.org/quicksort-tail-call-optimization-reducing-worst-case-space-log-n/
+        if(q-p < r-q):                                      #was dealing with recursion depth issues and found help at https://www.geeksforgeeks.org/quicksort-tail-call-optimization-reducing-worst-case-space-log-n/
             quickSort(unsortedList, _comp, p, q-1)          #originally used the tail recursive-quicksort from the textbook, but found that I still hit max recursion depth
             p = q+1                                         #the if else method here works well because it only recursively calls whichever part (lower or higher) becomes smaller after partition
         else:
@@ -42,7 +42,7 @@ def partition(partList, _comp, p, r):
 #driver section (like main())
 
 
-fileNum = 1 #select which data set to sort
+fileNum = 2 #select which data set to sort
 
 comp = header.comparisonCounter()
 

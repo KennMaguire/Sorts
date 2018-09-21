@@ -10,6 +10,13 @@ class comparisonCounter:
     def add(self, x):
         self.total += x
 
+class exchangeCounter:
+    total = 0
+    def __init__(self):
+        self.total = 0
+    def add(self, x):
+        self.total += x
+
 class plotCandE:
     exchY = []
     compY = []
