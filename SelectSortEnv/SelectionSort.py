@@ -14,9 +14,11 @@ import header
 
 def selectionSort(unsortedList, _comp):
     exchangeCounter = 0
-    nCounter = 0;
+    nCounter = 0
     plotArrays = header.plotCandE()
+
     print(unsortedList)
+
     for j in range (0,len(unsortedList)):                                     # iterate through array starting at first element (with inner loop finding )
         nCounter += 1
         header.plotCompAndExchange(nCounter, exchangeCounter, _comp.total, plotArrays)
@@ -49,9 +51,18 @@ def selectionSort(unsortedList, _comp):
 
 
 
-print("Please select which file # you'd like to sort \n 1-7")
 
-fileNum = 1     #shuffle.txt
+
+
+
+
+
+
+
+
+#driver section (like main())
+
+fileNum = 1     #select which data set to sort
 comp = header.comparisonCounter()
 
 testList = []
