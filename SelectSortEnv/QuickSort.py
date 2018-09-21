@@ -12,20 +12,14 @@ import header
 
 
 def quickSort(unsortedList, _comp, _exch, _nCount, p, r):
-    #_nCount.add(1)
     while p < r:
         q = partition(unsortedList, _comp, _exch, p, r)
         if(q-p < r-q):                                      #was dealing with recursion depth issues and found help at https://www.geeksforgeeks.org/quicksort-tail-call-optimization-reducing-worst-case-space-log-n/
-        #    _nCount.add(1)
-        #    header.plotCompAndExchange(nCount.total, _exch.total, _comp.total, _plotArrays)
             quickSort(unsortedList, _comp, _exch, _nCount, p, q-1)          #originally used the tail recursive-quicksort from the textbook, but found that I still hit max recursion depth
             p = q+1                                         #the if else method here works well because it only recursively calls whichever part (lower or higher) becomes smaller after partition
         else:
-        #    _nCount.add(1)
-        #    header.plotCompAndExchange(nCount.total, _exch.total, _comp.total, _plotArrays)
             quickSort(unsortedList, _comp, _exch, _nCount, q+1, r)
             r = r-1
-    #    print(_nCount.total)
 
 
 
