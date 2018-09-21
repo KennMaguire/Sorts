@@ -16,6 +16,12 @@ class exchangeCounter:
         self.total = 0
     def add(self, x):
         self.total += x
+class nCounter:
+    total = 0
+    def __init__(self):
+        self.total = 0
+    def add(self, x):
+        self.total += x
 
 class plotCandE:
     exchY = []
@@ -27,12 +33,20 @@ class plotCandE:
         self.countX = []
 
 
-def comparisonAndCount(_unsortedArray, _min, _i, _comp):
+def comparisonAndCountSS(_unsortedArray, _min, _i, _comp):
     _comp.add(1)
     if(_unsortedArray[_i] < _unsortedArray[_min]):
         return True
     else:
         return False
+
+def comparisonAndCountQS(_partArray, _j, _pivot, _comp):
+    _comp.add(1)
+    if(_partArray[_j] <= _pivot ):
+        return True
+    else:
+        return False
+
 
 def plotCompAndExchange(_count, _exchange, _comparison, _plotArrays):
     def appendValues():

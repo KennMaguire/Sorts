@@ -23,11 +23,12 @@ def selectionSort(unsortedList, _comp, _exch):
         header.plotCompAndExchange(nCounter, _exch.total, _comp.total, plotArrays)
         min = j                                                                 # assume j is min
         for i in range(j+1, (len(unsortedList))):                               # iterate through array from next element (swaps if unsortedList[i] < unsortedList[j])
-            if header.comparisonAndCount(unsortedList, min, i, _comp):                            #compare, and if new min found, change min index
+            if header.comparisonAndCountSS(unsortedList, min, i, _comp):                            #compare, and if new min found, change min index
                 min = i
         if(min != j):
             _exch.add(1)                                                #if min is changed to new index point, swap
             unsortedList[j], unsortedList[min] = unsortedList[min], unsortedList[j]
+        print(nCounter)
     sortedList = unsortedList                                                   #technically both are now sorted
     print("\nThe length of the sorted list is: " + str(len(sortedList)) + "\n")
     print("The number of array assignments is: " + str(_exch.total) + "\n")
