@@ -24,6 +24,7 @@ vector<int> selectionSort(vector<int> _unsortedList)//, int &_comp, int &_exch)
             min = i;
           }
       }
+
       if(min != j)
       {
         int tempInt;
@@ -51,12 +52,7 @@ int main()
 
     vector<int> unsortedList;
     vector<int> sortedList;
-    unsortedList.push_back(3);
-    unsortedList.push_back(2);
-    unsortedList.push_back(7);
-    unsortedList.push_back(3);
-    unsortedList.push_back(1);
-    unsortedList.push_back(6);
+
 
     for(int i = 0; i < unsortedList.size(); i++)
     {
