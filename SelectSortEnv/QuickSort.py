@@ -48,7 +48,7 @@ def partition(partList, _comp, _exch, p, r):
 #driver section (like main())
 
 
-fileNum = 3 #select which data set to sort
+fileNum = 1 #select which data set to sort
 
 comp = header.comparisonCounter()
 

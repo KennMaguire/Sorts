@@ -4,13 +4,12 @@
 #include <string>
 using namespace std;
 
-vector<int> readFile()
+vector<int> readFile(int _fileNum)
 {
     ifstream inFile;
     vector<int> dataSet;
     string datFiles[] = {"duplicate.txt", "nearly-sorted.txt", "nearly-unsorted.txt", "one-million-randoms.txt", "shuffled.txt", "sorted.txt", "unsorted.txt"};
-    int fileNum = 5;
-    string filePath = "data/" + datFiles[fileNum];
+    string filePath = "data/" + datFiles[_fileNum];
 
     cout << filePath << endl;
     inFile.open(filePath);

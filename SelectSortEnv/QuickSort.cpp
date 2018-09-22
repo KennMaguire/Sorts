@@ -7,23 +7,33 @@ int main()
 {
 
   vector<int> unsortedList;
-  vector<int> sortedList;
+
   int comp = 0;
   int exch = 0;
 
+//  int count [] = {1,10,100,1000,10000, 100000, 1000000};
 
 
 
 
-  unsortedList = readFile();
-  sortedList = quickSort(unsortedList, comp, exch);
+//  for(int i = 0; i < sizeof(count); i++)
+//  {
+        int fileNum = 5;
+        unsortedList = readFile(fileNum);
 
 
-  for(int i = 0; i < unsortedList.size(); i++)
-  {
-    cout << unsortedList[i] << endl;
-  }
+        t_r_quickSort(unsortedList, 0, (unsortedList.size()-1), comp, exch);
+        for(int j = 0; j < unsortedList.size(); j++)
+        {
+          cout << unsortedList[j] << endl;
+        }
 
-  return 0;
+        cout << "\nThe size of the sorted list is: " << unsortedList.size() << endl;
+        cout << "\nThe number of comparisons is: " << comp << endl;
+        cout << "\nThe number of exchanges is: " << exch << endl;
+        cout << "\n\n" << endl;
+
+//   }
+        return 0;
 
 }
