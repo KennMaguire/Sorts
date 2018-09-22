@@ -84,7 +84,7 @@ testList = header.inputFile(int(fileNum))
 """
 
 
-count = [1,10,100,1000,10000] # 100000, 1000000]
+count = [1,10,100,1000,10000, 100000, 1000000]
 testListSorted = []
 testListLength = len(testList)
 
@@ -97,6 +97,7 @@ for i in count:
         exch.total = 0
         print("The unsorted list at " + str(i) + " is: " + str(testList[0:i]))
         print("\n")
+        print("sorting....................")
         testListSorted = quickSort(testList[0:i], comp, exch, nCount, 0, (i-1))  #in this instance, the length of my list is i, so I'm passing it's size -1
         plotArrays.countX.append(i)
         plotArrays.exchY.append(exch.total)
