@@ -3,8 +3,8 @@ Main File for Quick Sort
 This file matches the other 3, but has its specified sort on line 38
 Written By: Kenneth Maguire
 
-This file runs the code for each input of n = n^0 through n^6, and outputs the number
-of comparisons. Since no swaps happen, the number of exchanges isn't calculated
+This file runs the code for each input of n = n^0 through n^6.
+Since the sort doesn't use comparisons or exchanges, they are not accounted for.
 */
 
 
@@ -25,8 +25,8 @@ int main()
   for(int i = 0; i != 7; i++)
   {
         int fileNum = 3;
-        int comp = 0;
-
+        int exch = 0;
+        int maxVal = 1001;
         unsortedList = readFile(fileNum);
 
         cout << unsortedList.size() << endl;
@@ -39,7 +39,7 @@ int main()
         vector<int> sortedList(count[i]);
         vector<int> portionList(count[i]);
         copy_n(unsortedList.begin(), count[i], portionList.begin());
-        countingSort(portionList, sortedList, 1001);
+        countingSort(portionList, sortedList, maxVal);
 
         cout << "\n\n";
         cout << "The sorted list is: " << endl;
@@ -49,8 +49,8 @@ int main()
         }
         cout << "\n\n";
         cout << "\nThe size of the sorted list is: " << portionList.size() << endl;
-        cout << "\nThe number of comparisons is: " << comp << endl;
-      //  cout << "\nThe number of exchanges is: " << exch << endl;
+      //  cout << "\nThe number of comparisons is: " << comp << endl;
+    //    cout << "\nThe number of exchanges is: " << exch << endl;
         cout << "\n\n" << endl;
 
     //    cout << i << endl;

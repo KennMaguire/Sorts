@@ -40,7 +40,7 @@ int main()
         t_r_quickSort(portionList, 0, (portionList.size()-1), comp, exch);
 
         cout << "\n\n";
-        cout << "The sorted list is: ";
+        cout << "The sorted list is: " << endl;
         for(int j = 0; j < portionList.size(); j++)
         {
           cout << portionList[j] << endl;

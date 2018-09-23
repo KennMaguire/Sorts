@@ -19,29 +19,33 @@ Written By: Kenneth Maguire
 void countingSort(vector<int> _unsortedList, vector<int> &_sortedOutput, int _maxVal)
 {
     vector<int> auxArray(_maxVal);
-  //  _comp = 1;
-    for(int i = 0; i < _maxVal; i++)        //assign 0 to all indexes 0 through maxVal
+
+    //assign 0 to all indexes 0 through maxVal
+    for(int i = 0; i < _maxVal; i++)
     {
     //   cout << "1" << endl;
         auxArray[i] = 0;
     }
+    //fill auxArray[i] with values equal to i
     for(int j = 1; j < _unsortedList.size(); j++)
     {
     //   cout << "2" << endl;
 
         auxArray[_unsortedList[j]] = auxArray[_unsortedList[j]] + 1;
     }
+    //fill auxArray with the number of values less than or equal the indexes value
     for(int i = 1; i < _maxVal; i++)
     {
     //   cout << "3" << endl;
         auxArray[i] = auxArray[i] + auxArray[i-1];
     }
+
     for(int j=(_unsortedList.size()-1); j > 0; --j)
     {
       //  cout << auxArray[_unsortedList[j]] << endl;
     //   cout << "4" << endl;
-
-        _sortedOutput[auxArray[_unsortedList[j]]] = _unsortedList[j];
+      //  _exch += 1;
+        _sortedOutput[auxArray[_unsortedList[j]]] = _unsortedList[j];     //add
         auxArray[_unsortedList[j]] = (auxArray[_unsortedList[j]] - 1);
     }
 
