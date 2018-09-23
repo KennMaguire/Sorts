@@ -21,12 +21,12 @@ void t_r_quickSort(vector<int> &_unsortedList, int _p, int _r, int &_comp, int &
 }
 int partitionQS(vector<int> &_partList, int _p, int _r, int &_comp, int &_exch)
 {
-    int pivot = _partList[_r];
-    int i = _p;
-    for(int j=_p; j < _r; j++)
+    int pivot = _partList[_r];      //set pivot to last index in array
+    int i = _p;                     //i will be top of i p through i
+    for(int j=_p; j < _r; j++)      //in this loop, p through i are <= pivot, i through j are >= pivot, j through r are unrestricted (source pg 173 Algorithms txt)
     {
         _comp += 1;
-        if(_partList[j] <= pivot)
+        if(_partList[j] <= pivot)   //if partList at j is <= pivot, add it to the lower partition, i++
         {
             _exch += 1;
             int tempInt1 = 0;
@@ -37,7 +37,7 @@ int partitionQS(vector<int> &_partList, int _p, int _r, int &_comp, int &_exch)
         }
     }
     _exch += 1;
-    int tempInt2 = 0;
+    int tempInt2 = 0;           //place pivot between the two partitions
     tempInt2 = _partList[i];
     _partList[i] = _partList[_r];
     _partList[_r] = tempInt2;

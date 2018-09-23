@@ -53,10 +53,6 @@ def plotCompAndExchange(_count, _exchange, _comparison, _plotArrays):
         _plotArrays.countX.append(_count)
         _plotArrays.exchY.append(_exchange)
         _plotArrays.compY.append(_comparison)
-    plt.xlabel('x axis')
-    plt.ylabel('y axis')
-    plt.title('Comparisons and Exchanges with increase in N')
-
     if _count == 1:
         appendValues()
     elif _count == 10:

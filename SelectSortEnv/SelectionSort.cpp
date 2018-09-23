@@ -1,46 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
-
-vector<int> selectionSort(vector<int> _unsortedList)//, int &_comp, int &_exch)
-{
-  int i = 0;
-  int j = 0;
-  int min = 0;
-
-
-
-  for(j = 0; j < _unsortedList.size(); j++)
-  {
-      min = j;
-    //  cout << min << endl;
-    //  cout << j << endl;
-      for(i = j+1; i < _unsortedList.size(); i++)
-      {
-      //  cout << _unsortedList[min] << " " << _unsortedList[i] << endl;
-          if(_unsortedList[i] < _unsortedList[min])
-          {
-            min = i;
-          }
-      }
-
-      if(min != j)
-      {
-        int tempInt;
-        tempInt = _unsortedList[j];
-        _unsortedList[j] = _unsortedList[min];
-        _unsortedList[min] = tempInt;
-      }
-
-
-  }
-
-
-  return _unsortedList;
-
-
-}
+#include "SelectionSort.h"
 
 
 
@@ -52,17 +10,39 @@ int main()
 
     vector<int> unsortedList;
     vector<int> sortedList;
+    int count [7] = {1,10,100,1000,10000, 100000, 1000000};
 
-    for(int i = 0; i < unsortedList.size(); i++)
+    for(int i = 0; i != 7; i++)
     {
-      cout << unsortedList[i] << endl;
-    }
-    cout << "\n\n\n";
-    sortedList = selectionSort(unsortedList);
+            int fileNum = 3;
+            int comp = 0;
+            int exch = 0;
+            unsortedList = readFile(fileNum);
+            cout << "\n\n";
+            cout << "The unsorted list is: ";
 
-    for(int i = 0; i < unsortedList.size(); i++)
-    {
-      cout << sortedList[i] << endl;
+
+            vector<int> portionList(count[i]);
+            copy_n(unsortedList.begin(), count[i], portionList.begin());
+            for(int j = 0; j < portionList.size(); j++)
+            {
+              cout << portionList[j] << " ";
+            }
+            selectionSort(portionList, comp, exch);
+
+            cout << "\n\n";
+            cout << "The sorted list is: ";
+            for(int j = 0; j < portionList.size(); j++)
+            {
+              cout << portionList[j] << endl;
+            }
+            cout << "\n\n";
+            cout << "\nThe size of the sorted list is: " << portionList.size() << endl;
+            cout << "\nThe number of comparisons is: " << comp << endl;
+            cout << "\nThe number of exchanges is: " << exch << endl;
+            cout << "\n\n" << endl;
+
+            cout << i << endl;
     }
 
 
