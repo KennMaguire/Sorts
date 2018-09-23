@@ -1,21 +1,25 @@
 #include "ReadFile.h"
 
+
+/*
+Algorithm found at the following link https://en.wikipedia.org/wiki/Selection_sort, reimplemented from SelectionSort.py
+
+*/
+
 void selectionSort(vector<int> &_unsortedList, int &_comp, int &_exch)
 {
   int i = 0;
   int j = 0;
   int min = 0;
 
-
+//Algorithm found in
 
   for(j = 0; j < _unsortedList.size(); j++)
   {
       min = j;
-    //  cout << min << endl;
-    //  cout << j << endl;
       for(i = j+1; i < _unsortedList.size(); i++)
       {
-      //  cout << _unsortedList[min] << " " << _unsortedList[i] << endl;
+
           _comp += 1;
           if(_unsortedList[i] < _unsortedList[min])
           {

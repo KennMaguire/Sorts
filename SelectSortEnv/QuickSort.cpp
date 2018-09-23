@@ -36,7 +36,7 @@ int main()
         cout << "The sorted list is: ";
         for(int j = 0; j < portionList.size(); j++)
         {
-          cout << portionList[j] << " ";
+          cout << portionList[j] << endl;
         }
         cout << "\n\n";
         cout << "\nThe size of the sorted list is: " << portionList.size() << endl;

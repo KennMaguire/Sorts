@@ -12,14 +12,14 @@ int main()
     vector<int> sortedList;
     int count [7] = {1,10,100,1000,10000, 100000, 1000000};
 
-    for(int i = 0; i != 7; i++)
+    for(int i = 0; i != 4; i++)
     {
-            int fileNum = 3;
+            int fileNum = 4;
             int comp = 0;
             int exch = 0;
             unsortedList = readFile(fileNum);
             cout << "\n\n";
-            cout << "The unsorted list is: ";
+            cout << "The unsorted list is: " << endl;
 
 
             vector<int> portionList(count[i]);
@@ -31,7 +31,7 @@ int main()
             selectionSort(portionList, comp, exch);
 
             cout << "\n\n";
-            cout << "The sorted list is: ";
+            cout << "The sorted list is: " << endl;
             for(int j = 0; j < portionList.size(); j++)
             {
               cout << portionList[j] << endl;
