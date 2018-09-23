@@ -6,18 +6,26 @@ using namespace std;
 
 vector<int> readFile(int _fileNum)
 {
+
     ifstream inFile;
-    vector<int> dataSet;
+    vector<int> dataSet(0);
     string datFiles[] = {"duplicate.txt", "nearly-sorted.txt", "nearly-unsorted.txt", "one-million-randoms.txt", "shuffled.txt", "sorted.txt", "unsorted.txt"};
     string filePath = "data/" + datFiles[_fileNum];
 
     cout << filePath << endl;
     inFile.open(filePath);
 
+    if(inFile.fail())
+    {
+      cout << "file failed to open" << endl;
+
+    }
+
     inFile.ignore();
     string dummyString;
+    getline(inFile, dummyString); //skip first 2 lines
+  //  string dummyString;
     getline(inFile, dummyString);
-
     while(!inFile.eof())
     {
 
@@ -33,17 +41,21 @@ vector<int> readFile(int _fileNum)
           break;
         }
     }
-/*
+
+    inFile.close();
+
+
     cout << dataSet.size() << endl;
-    for(int i = 0; i < dataSet.size(); i++)
+  /*  for(int i = 0; i < dataSet.size(); i++)
     {
         cout << dataSet[i] << endl;
 
     }
 
 */
-    inFile.close();
+
     return dataSet;
+
 
 
 

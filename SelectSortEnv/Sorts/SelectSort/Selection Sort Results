@@ -1,0 +1,114 @@
+[Command: bash -c 'xcrun clang++ -std=c++14 -Wall -include stdio.h -fcolor-diagnostics -include iostream '/Users/kennethmaguire/School Work/Algorithms/Sort Assignment 1/SelectSortEnv/SelectionSort.cpp' -o /tmp/cpp.out && /tmp/cpp.out']
+data/one-million-randoms.txt
+
+
+
+
+
+
+The size of the sorted list is: 1
+
+The number of comparisons is: 0
+
+The number of exchanges is: 0
+
+
+
+0
+data/one-million-randoms.txt
+
+
+
+
+
+
+The size of the sorted list is: 10
+
+The number of comparisons is: 45
+
+The number of exchanges is: 6
+
+
+
+1
+data/one-million-randoms.txt
+
+
+
+
+
+
+The size of the sorted list is: 100
+
+The number of comparisons is: 4950
+
+The number of exchanges is: 95
+
+
+
+2
+data/one-million-randoms.txt
+
+
+
+
+
+
+The size of the sorted list is: 1000
+
+The number of comparisons is: 499500
+
+The number of exchanges is: 991
+
+
+
+3
+data/one-million-randoms.txt
+
+
+
+
+
+
+The size of the sorted list is: 10000
+
+The number of comparisons is: 49995000
+
+The number of exchanges is: 9986
+
+
+
+4
+data/one-million-randoms.txt
+
+
+
+
+
+
+The size of the sorted list is: 100000
+
+The number of comparisons is: 704982704
+
+The number of exchanges is: 99885
+
+
+
+5
+data/one-million-randoms.txt
+
+
+
+
+
+
+The size of the sorted list is: 1000000
+
+The number of comparisons is: 1783293664
+
+The number of exchanges is: 999216
+
+
+
+6
+[Finished in 2122.371s]
