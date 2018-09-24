@@ -26,7 +26,7 @@ int main()
 
     for(int i = 0; i != 4; i++)
     {
-            int fileNum = 3;
+            int fileNum = 5;
             int comp = 0;
             int exch = 0;
             unsortedList = readFile(fileNum);

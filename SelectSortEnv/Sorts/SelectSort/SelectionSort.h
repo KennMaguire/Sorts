@@ -16,22 +16,23 @@ void selectionSort(vector<int> &_unsortedList, int &_comp, int &_exch)
   int j = 0;
   int min = 0;
 
-//Algorithm found in
+
+
 
   for(j = 0; j < _unsortedList.size(); j++)
   {
-      min = j;
-      for(i = j+1; i < _unsortedList.size(); i++)
+      min = j;          //assume j is the smallest value
+      for(i = j+1; i < _unsortedList.size(); i++)     //search array for smaller value than j
       {
 
           _comp += 1;
-          if(_unsortedList[i] < _unsortedList[min])
+          if(_unsortedList[i] < _unsortedList[min])   //if smaller value found
           {
-            min = i;
+            min = i;                                  //set new index for smaller value
           }
       }
 
-      if(min != j)
+      if(min != j)                                    //if min isn't set to first value, then swap
       {
         _exch += 1;
         int tempInt;
