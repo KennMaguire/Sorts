@@ -9,6 +9,7 @@ on page 188 and the partition algorithm can be found on page 171.
 
 #include "../../ReadFile.h"
 
+//function declarations allow quicksort to call partition
 
 int partitionQS(vector<int> &_partList, int _p, int _r, int &_comp, int &_exch);
 void t_r_quickSort(vector<int> &_unsortedList, int _p, int _r, int &_comp, int &_exch);
@@ -21,8 +22,8 @@ void t_r_quickSort(vector<int> &_unsortedList, int _p, int _r, int &_comp, int &
   while(_p < _r)
   {
     int q = partitionQS(_unsortedList, _p, _r, _comp, _exch);
-    t_r_quickSort(_unsortedList, _p, (q-1), _comp, _exch);
-    _p = q + 1;
+    t_r_quickSort(_unsortedList, _p, (q-1), _comp, _exch);      //recursive calls to t_r_quickSort
+    _p = q + 1;                                                 //iterative method to mitigate too many recursive function calls
 
   }
 
@@ -47,7 +48,7 @@ int partitionQS(vector<int> &_partList, int _p, int _r, int &_comp, int &_exch)
     }
     _exch += 1;
     int tempInt2 = 0;           //place pivot between the two partitions
-    tempInt2 = _partList[i];
+    tempInt2 = _partList[i];    //
     _partList[i] = _partList[_r];
     _partList[_r] = tempInt2;
     return i;

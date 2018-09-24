@@ -26,7 +26,7 @@ int main()
     //fileNum calls appropriate file
     //comp is for comparisons returned from function
     //exch is for exchanges returned from function
-        int fileNum = 1;
+        int fileNum = 3;
         int comp = 0;
         int exch = 0;
       //calls read from file function
