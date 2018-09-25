@@ -33,12 +33,13 @@ int main()
         unsortedList = readFile(fileNum);
         //printsthe unsorted list to confirm the list is refreshed for each iteration of the outer for loop
         cout << "\n\n";
-        cout << "The unsorted list is: ";
+//        cout << "The unsorted list is: ";
+/*
         for(int j = 0; j < unsortedList.size(); j++)
         {
           cout << unsortedList[j] << " ";
         }
-
+*/
         //portionList contains a slice of the unsortedList, to be passed to the sorting algorithms
         //then we can get comps and exch for each sorting algorithm at each power of 10
         vector<int> portionList(count[i]);
@@ -50,11 +51,13 @@ int main()
 
         //prints the sorted list to confirm that list is sorted
         cout << "\n\n";
-        cout << "The sorted list is: " << endl;
+//        cout << "The sorted list is: " << endl;
+/*
         for(int j = 0; j < portionList.size(); j++)
         {
           cout << portionList[j] << endl;
         }
+*/
         cout << "\n\n";
         //this is used for later plotting and analysis
         cout << "\nThe size of the sorted list is: " << portionList.size() << endl;

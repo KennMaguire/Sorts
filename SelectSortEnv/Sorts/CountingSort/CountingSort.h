@@ -12,7 +12,7 @@ Written By: Kenneth Maguire
 
 #include "../../ReadFile.h"
 
-void countingSort(vector<int> _unsortedList, vector<int> &_sortedOutput, int _maxVal)
+void countingSort(vector<int> _unsortedList, vector<int> &_sortedOutput, int _maxVal, int &_exch)
 {
     vector<int> auxArray(_maxVal);
 
@@ -37,6 +37,7 @@ void countingSort(vector<int> _unsortedList, vector<int> &_sortedOutput, int _ma
     //find the end array element value, fill the _sortedOutput with the value at the index specified (number of ints less than or equal to the index val)
     for(int j=(_unsortedList.size()-1); j > 0; --j)
     {
+        _exch += 1;
         _sortedOutput[auxArray[_unsortedList[j]]] = _unsortedList[j];
         auxArray[_unsortedList[j]] = (auxArray[_unsortedList[j]] - 1);
     }

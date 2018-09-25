@@ -46,7 +46,7 @@ vector<int> readFile(int _fileNum)
     inFile.close();
     //close file
 
-    cout << dataSet.size() << endl;
+  //  cout << dataSet.size() << endl;
   /*  for(int i = 0; i < dataSet.size(); i++)
     {
         cout << dataSet[i] << endl;
