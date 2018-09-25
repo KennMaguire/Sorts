@@ -9,7 +9,7 @@ vector<int> readFile(int _fileNum)
 
     ifstream inFile;
     vector<int> dataSet(0);
-    string datFiles[] = {"duplicate.txt", "nearly-sorted.txt", "nearly-unsorted.txt", "one-million-randoms.txt", "shuffled.txt", "sorted.txt", "unsorted.txt"};
+    string datFiles[] = {"duplicate.txt", "nearly-sorted.txt", "nearly-unsorted.txt", "shuffled.txt", "sorted.txt", "unsorted.txt"};
     string filePath = "data/" + datFiles[_fileNum];   //add strings together for folder path
 
     cout << filePath << endl;

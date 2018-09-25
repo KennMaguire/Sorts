@@ -3,13 +3,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-compY = [0, 27, 574, 11172, 181820, 6241419, 512901715]
-exchY = [0, 22, 321, 6803, 120094, 5672294, 508136871]
+#compY = [0, 27, 574, 11172, 181820, 6241419, 512901715]  #quick sort
+#exchY = [0, 22, 321, 6803, 120094, 5672294, 508136871]
 #compY = [1,10,100,1000,10000,100000,1000000]
 #exchY = [1,10,100,1000,10000,100000,1000000]
 
 #compY = [0,45,4950,499500,4999500,]
 #exchY = [0]
+
+compY = [0, 45,4950, 499500, 49995000, 704982704, 1783293664]
+exchY = [0, 9, 96, 995, 9980, 99891, 998977]
 countX = [1,10,100,1000,10000,100000,1000000]
 
 
@@ -18,7 +21,7 @@ countX = [1,10,100,1000,10000,100000,1000000]
 
 
 plt.figure(1)
-plt.title("Exchanges for increase in N (Quick Sort)")
+plt.title("Exchanges for increase in N (Selection Sort)")
 plt.xlabel("N")
 plt.xscale('log')
 
@@ -33,7 +36,7 @@ plt.xscale('log')
 
 plt.ylabel("Comparisons")
 plt.yscale("symlog")
-plt.title("Comparisons for increase in N (Quick Sort)")
+plt.title("Comparisons for increase in N (Selection Sort)")
 plt.plot(countX, compY, 'yp-', markersize=6, label='Comparisons')
 
 plt.show()
